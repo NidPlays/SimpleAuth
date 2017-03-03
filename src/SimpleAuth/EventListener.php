@@ -52,6 +52,7 @@ class EventListener implements Listener{
 			$config = $this->plugin->getDataProvider()->getPlayer($event->getPlayer());
 			if($config !== null and $config["lastip"] === $event->getPlayer()->getUniqueId()->toString()){
 				$this->plugin->authenticatePlayer($event->getPlayer());
+				$event->getPlayer()->sendMessage("§aLogged by Last IP/UID");
 				return;
 			}
 		}
